@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boot strap form</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <style>
+    .custom-file-input:lang(ja) ~ .custom-file-label::after {
+      content: "参照";
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <h3>バリデーションの例</h3>
+    <form class="needs-validation" novalidate>
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label for="validationCustom01">名前</label>
+          <input type="text" class="form-control is-invalid" id="validationCustom01" placeholder="名前" required>
+          <div class="valid-feedback">
+            正しく入力されました。
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="validationCustom02">苗字</label>
+          <input type="text" class="form-control" id="validationCustom02" placeholder="苗字" required>
+          <div class="valid-feedback">
+            正しく入力されました。
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="validationCustomUsername">ユーザー名</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupPrepend">@</span>
+            </div>
+            <input type="text" class="form-control" id="validationCustomUsername" placeholder="ユーザー名" aria-describedby="inputGroupPrepend" required>
+            <div class="invalid-feedback">
+              ユーザー名を入力してください
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-6 mb-3">
+          <label for="validationCustom03">市</label>
+          <input type="text" class="form-control" id="validationCustom03" placeholder="市区町村" required>
+          <div class="invalid-feedback">
+            市区町村を入力してください
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="validationCustom04">県</label>
+          <input type="text" class="form-control" id="validationCustom04" placeholder="都道府県" required>
+          <div class="invalid-feedback">
+            都道府県を入力してください
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="validationCustom05">Zip</label>
+          <input type="text" class="form-control" id="validationCustom05" placeholder="郵便番号" required>
+          <div class="invalid-feedback">
+            郵便番号を入力してください
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+          <label class="form-check-label" for="invalidCheck">
+            同意する
+          </label>
+          <div class="invalid-feedback">
+            送信するには同意が必要です。
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary" type="submit">送信</button>
+    </form>
+
+    <hr class="my-5">
+
+    <h3>普通の例</h3>
+    <form action="index.html" method="post" class="was-validated">
+      <div class="form-group">
+        <label for="name">氏名</label>
+        <input type="email" class="form-control" id="name" placeholder="" required>
+      </div>
+      <div class="form-group">
+        <label for="message">メッセージ</label>
+        <textarea id="message" name="message" rows="8" cols="80" class="form-control" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="date">日付</label>
+        <select id="date" class="form-control" name="date" required>
+          <option value="">--</option>
+          <option value="2017年1月">2017年10月</option>
+          <option value="2017年1月">2017年11月</option>
+          <option value="2017年1月">2017年12月</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">登録する</button>
+    </form>
+
+    <hr class="my-5">
+
+    <h3>ラベルと横並びの例</h3>
+    <form action="index.html" method="post">
+      <div class="form-group row">
+        <label for="email" class="col-sm-4 col-form-label">メールアドレス</label>
+        <div class="col-md-8">
+          <input type="text" class="form-control" id="email" value="">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="password" class="col-sm-4 col-form-label">パスワード</label>
+        <div class="col-md-8">
+          <input type="password" class="form-control" id="password">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">ログインする</button>
+    </form>
+
+    <hr class="my-5">
+
+    <h3>横並びインライン</h3>
+    <form class="form-inline" action="index.html" method="post">
+      <div class="form-group  mb-2">
+        <input type="text" class="form-control" id="email" value="" placeholder="ログインID">
+      </div>
+      <div class="form-group mx-sm-3 mb-2">
+        <input type="password" class="form-control" id="password" value="" placeholder="パスワード">
+      </div>
+      <button type="submit" class="btn btn-primary mb-2">ログイン</button>
+    </form>
+
+    <hr class="my-5">
+
+    <h3>フォームの大きさ</h3>
+    <form>
+      <div class="form-group">
+        <label>小さいフォーム</label>
+        <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm">
+      </div>
+      <div class="form-group">
+        <label>通常のフォーム</label>
+        <input class="form-control" type="text" placeholder="Default input">
+      </div>
+      <div class="form-group">
+        <label>大きいフォーム</label>
+        <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg">
+      </div>
+      <button type="submit" class="btn btn-primary">登録する</button>
+    </form>
+
+    <hr class="my-5">
+
+    <h3>チェックボックスの例</h3>
+    <form>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="lightcourse">
+        <label class="form-check-label" for="lightcourse">
+          ライト26時間コース
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="standardcourse">
+        <label class="form-check-label" for="standardcourse">
+          スタンダード48時間コース
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="professionalcourse" disabled>
+        <label class="form-check-label" for="professionalcourse">
+          プロフェッショナル80時間コース(現在休止中)
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="lesson">
+        <label class="form-check-label" for="lesson">
+          単発マンツーマンレッスン
+        </label>
+      </div>
+      <button type="submit" class="btn btn-primary">登録する</button>
+    </form>
+
+    <hr class="my-5">
+
+    <h3>ラジオボタンの例</h3>
+    <form>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="course" id="lightcourse-radio" value="lightcourse" checked>
+        <label class="form-check-label" for="lightcourse-radio">
+          ライトコース
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="course" id="standardcourse-radio" value="standardcourse">
+        <label class="form-check-label" for="standardcourse-radio">
+          スタンダードコース
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="course" id="professionalcourse-radio" value="professionalcourse">
+        <label class="form-check-label" for="professionalcourse-radio">
+          プロフェッショナルコース
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="course" id="lesson-radio" value="lesson">
+        <label class="form-check-label" for="lesson-radio">
+          単発マンツーマンレッスン(現在受け付け停止中)
+        </label>
+      </div>
+      <button type="submit" class="btn btn-primary">登録する</button>
+    </form>
+
+    <hr class="my-5">
+
+    <h3>インラインチェックボックスの例</h3>
+    <form  action="index.html" method="post">
+      <div class="form-group">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" value="" id="lightcourse-inline">
+          <label class="form-check-label" for="lightcourse-inline">
+            ライト26時間コース
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" value="" id="standardcourse-inline">
+          <label class="form-check-label" for="standardcourse-inline">
+            スタンダード48時間コース
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" value="" id="professionalcourse-inline">
+          <label class="form-check-label" for="professionalcourse-inline">
+            プロフェッショナル80時間コース
+          </label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">登録する</button>
+    </form>
+
+    <hr class="my-5">
+
+    <h3>ファイル選択</h3>
+    <div class="custom-file">
+      <input type="file" class="custom-file-input" id="customFile">
+      <label class="custom-file-label" for="customFile">ファイル選択...</label>
+    </div>
+
+    <hr class="my-5">
+
+    <h3>レンジ</h3>
+    <label for="customRange3">レンジの実例</label>
+    <input type="range" class="custom-range" min="0" max="5" step="0.5" id="customRange3">
+
+    <hr class="my-5">
+
+    
+    <h3>選択メニュー</h3>
+    <select class="custom-select custom-select-lg">
+      <option selected>大きめの選択メニューを開く</option>
+      <option value="1">その1</option>
+      <option value="2">その2</option>
+      <option value="3">その3</option>
+    </select>
+    <select class="custom-select">
+      <option selected>この選択メニューを開く</option>
+      <option value="1">その1</option>
+      <option value="2">その2</option>
+      <option value="3">その3</option>
+    </select>
+    <select class="custom-select custom-select-sm">
+      <option selected>小さめの選択メニューを開く</option>
+      <option value="1">その1</option>
+      <option value="2">その2</option>
+      <option value="3">その3</option>
+    </select>
+    <select class="custom-select" multiple>
+      <option selected>この選択メニューを開く</option>
+      <option value="1">その1</option>
+      <option value="2">その2</option>
+      <option value="3">その3</option>
+    </select>
+
+    <hr class="my-5">
+
+    <h3>切替スイッチ</h3>
+    <div class="custom-control custom-switch">
+      <input type="checkbox" class="custom-control-input" id="customSwitch1">
+      <label class="custom-control-label" for="customSwitch1">このスイッチ要素を切替</label>
+    </div>
+
+    <hr class="my-5">
+
+    <h3>ラジオボタン</h3>
+    <div class="custom-control custom-radio">
+      <input id="customRadio1" name="customRadio" type="radio" class="custom-control-input">
+      <label class="custom-control-label" for="customRadio1">このカスタムラジオボタンを切替</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input id="customRadio2" name="customRadio" type="radio" class="custom-control-input">
+      <label class="custom-control-label" for="customRadio2">またはこの他のカスタムラジオボタンを切替</label>
+    </div>
+    <h3>ラジオボタン横並び</h3>
+    <div class="custom-control custom-radio custom-control-inline">
+      <input type="radio" id="customRadioInline1" name="customRadioInline" class="custom-control-input">
+      <label class="custom-control-label" for="customRadioInline1">このカスタムラジオボタンを切替</label>
+    </div>
+    <div class="custom-control custom-radio custom-control-inline">
+      <input type="radio" id="customRadioInline2" name="customRadioInline" class="custom-control-input">
+      <label class="custom-control-label" for="customRadioInline2">またはこの他のカスタムラジオボタンを切替</label>
+    </div>
+    <div class="custom-control custom-radio custom-control-inline">
+      <input type="radio" id="customRadioInline3" name="customRadioInline" class="custom-control-input" disabled>
+      <label class="custom-control-label" for="customRadioInline3">またはこの他のカスタムラジオボタンを切替</label>
+    </div>
+
+    <hr class="my-5">
+    <h3>チェックボックス</h3>
+    <div class="custom-control custom-checkbox">
+      <input type="checkbox" class="custom-control-input" id="customCheck1">
+      <label class="custom-control-label" for="customCheck1">このカスタムチェックボックスをチェック</label>
+    </div>
+    <div class="custom-control custom-checkbox">
+      <input type="checkbox" class="custom-control-input" id="customCheck2">
+      <label class="custom-control-label" for="customCheck2">このカスタムチェックボックスをチェック</label>
+    </div>    
+    <h3>チェックボックスインライン</h3>
+    <div class="custom-control custom-checkbox custom-control-inline">
+      <input type="checkbox" class="custom-control-input" id="customCheck1-inline">
+      <label class="custom-control-label" for="customCheck1-inline">このカスタムチェックボックスをチェック</label>
+    </div>
+    <div class="custom-control custom-checkbox custom-control-inline">
+      <input type="checkbox" class="custom-control-input" id="customCheck2-inline">
+      <label class="custom-control-label" for="customCheck2-inline">このカスタムチェックボックスをチェック</label>
+    </div>
+    
+    <hr class="my-5">
+
+
+    <hr class="my-5">
+
+
+    <hr class="my-5">
+
+
+    <hr class="my-5">
+
+
+    <hr class="my-5">
+
+
+  </div>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script>
+  (function() {
+    'use strict';
+    window.addEventListener('load', function() {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+  </script>
+</body>
+</html>
